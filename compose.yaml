@@ -1,0 +1,23 @@
+services:
+  cupbot:
+    build: .
+    container_name: cupbot
+    # Il .env resta fuori dall'immagine: Compose lo legge e passa i valori
+    # al container come variabili d'ambiente
+    env_file: .env
+    restart: unless-stopped
+    # Evita processi zombie lasciati dal browser
+    init: true
+    # Memoria condivisa per Firefox: il valore predefinito di Docker è piccolo
+    shm_size: "1gb"
+    volumes:
+      # I tracciamenti sopravvivono alla ricreazione del container
+      - tracciamenti:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  tracciamenti:
