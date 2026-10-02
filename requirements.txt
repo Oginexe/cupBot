@@ -1,0 +1,4 @@
+python-telegram-bot[job-queue]==22.8
+playwright==1.62.0
+python-dotenv==1.2.3
+tzdata==2026.4

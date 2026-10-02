@@ -1,0 +1,16 @@
+# Token del bot e ID autorizzato: non vanno mai pubblicati
+.env
+
+# Tracciamenti salvati (contengono codici fiscali)
+data/
+
+# Ambiente virtuale e file generati da Python
+.venv/
+__pycache__/
+*.pyc
+
+# Impostazioni dell'editor
+.vscode/
+
+# Esercizi di prova con python-telegram-bot
+Test/
